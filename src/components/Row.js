@@ -15,9 +15,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
     }
     fetchData();
   }, [fetchUrl]);
-  console.table(movies);
+  //   console.table(movies);
   return (
-    <div>
+    <Rows>
       <h2>{title}</h2>
       <RowPosters>
         {movies.map((movie) =>
@@ -36,11 +36,15 @@ function Row({ title, fetchUrl, isLargeRow }) {
           )
         )}
       </RowPosters>
-    </div>
+    </Rows>
   );
 }
 
 export default Row;
+const Rows = styled.div`
+  color: white;
+  margin-left: 20px;
+`;
 const RowPosterImg = styled.img`
   width: 100%;
   max-height: 100px;
